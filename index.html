@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAS Web Builder - Solusi AI Tercepat untuk Google Apps Script</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#10b981',
+                        secondary: '#3b82f6',
+                        dark: '#0f172a',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0f172a; color: #f8fafc; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .text-gradient { background: linear-gradient(to right, #10b981, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .bg-gradient-primary { background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%); }
+        .feature-card:hover { transform: translateY(-10px); border-color: #10b981; }
+        .check-icon { color: #10b981; margin-right: 10px; }
+    </style>
+</head>
+<body class="overflow-x-hidden antialiased bg-slate-900 text-slate-50">
+
+    <!-- Promo Banner -->
+    <div class="bg-gradient-to-r from-emerald-600 to-blue-600 py-3 px-4 text-center text-sm font-bold z-[60] relative">
+        <i class="fa-solid fa-fire-flame-curved mr-2 animate-pulse"></i> 
+        DAPATKAN HARGA SPESIAL Rp. 65.000 HANYA HARI INI! (HARGA NORMAL Rp. 99.000)
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-12 left-0 right-0 z-50 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-6 py-4 shadow-xl border border-white/10">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center">
+                    <i class="fa-solid fa-bolt text-white text-xl"></i>
+                </div>
+                <span class="text-xl font-black tracking-tighter uppercase">GAS <span class="text-emerald-400">BUILDER</span></span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300">
+                <a href="#solusi" class="hover:text-emerald-400 transition-colors">Solusi</a>
+                <a href="#fitur" class="hover:text-emerald-400 transition-colors">Fitur Premium</a>
+                <a href="https://drive.google.com/file/d/1M33VPg25ggbPWljadyVyRhroLAZUDj6t/view?usp=sharing" target="_blank" class="text-red-400 hover:text-red-300 transition-colors">Lihat Demo Video</a>
+            </div>
+            <a href="https://gemini.google.com/share/97364c54f09f" target="_blank" class="bg-emerald-500 hover:bg-emerald-600 px-6 py-2.5 rounded-xl text-sm font-bold text-white transition-all shadow-lg shadow-emerald-500/20">
+                Beli Sekarang
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-52 pb-24 px-6 overflow-hidden">
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-8 leading-[1.1] tracking-tight">
+                Ubah Ide Menjadi Aplikasi <br>
+                <span class="text-gradient">Tanpa Menulis Kode Manual</span>
+            </h1>
+            <p class="text-slate-400 text-lg md:text-xl max-w-3xl mx-auto mb-12 leading-relaxed">
+                GAS Web Builder adalah asisten AI revolusioner yang membangun infrastruktur aplikasi berbasis Google Apps Script secara instan. Dari database spreadsheet hingga payment gateway, semuanya selesai dalam hitungan menit!
+            </p>
+
+            <!-- Pricing Focus -->
+            <div class="inline-block glass border-2 border-emerald-500/50 rounded-[2.5rem] p-8 mb-12 shadow-2xl">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="text-center md:text-left">
+                        <span class="text-slate-500 line-through text-xl">Rp 99.000</span>
+                        <div class="text-emerald-400 text-6xl font-black tracking-tighter">Rp 65.000</div>
+                        <p class="text-rose-400 text-xs font-bold mt-2 uppercase tracking-widest animate-pulse">Berakhir Saat Jam 00:00 Malam Ini!</p>
+                    </div>
+                    <div class="h-px md:h-16 w-full md:w-px bg-slate-700"></div>
+                    <a href="https://gemini.google.com/share/97364c54f09f" target="_blank" class="bg-gradient-primary text-white px-10 py-5 rounded-2xl font-black text-xl hover:scale-105 transition-transform shadow-xl shadow-emerald-500/40">
+                        AMBIL PROMO SEKARANG <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Solution Section -->
+    <section id="solusi" class="py-24 px-6 bg-slate-800/30">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-black mb-6">Mengapa Anda <span class="text-emerald-400">Wajib</span> Memilikinya?</h2>
+                    <p class="text-slate-400 mb-8 text-lg leading-relaxed">
+                        Biasanya, membangun aplikasi web memerlukan sewa hosting mahal dan keahlian coding tingkat tinggi. Dengan GAS Web Builder, Anda memanfaatkan ekosistem Google secara gratis dan membiarkan AI kami mengerjakan kodenya.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center text-slate-200 font-medium">
+                            <i class="fa-solid fa-circle-check check-icon"></i> Hemat biaya hosting selamanya (Gratis via Google)
+                        </li>
+                        <li class="flex items-center text-slate-200 font-medium">
+                            <i class="fa-solid fa-circle-check check-icon"></i> Tidak perlu instalasi software berat
+                        </li>
+                        <li class="flex items-center text-slate-200 font-medium">
+                            <i class="fa-solid fa-circle-check check-icon"></i> Dashboard Admin siap pakai dalam 1x klik
+                        </li>
+                    </ul>
+                </div>
+                <div class="glass p-8 rounded-3xl border border-white/5 relative">
+                    <div class="absolute -top-6 -left-6 bg-emerald-500 text-white px-4 py-2 rounded-xl font-bold text-sm shadow-lg">
+                        MODERN WORKFLOW
+                    </div>
+                    <div class="space-y-4 font-mono text-sm text-emerald-300">
+                        <p class="opacity-50">// Prompt AI Anda:</p>
+                        <p class="text-white">"Buatkan sistem kasir online dengan database spreadsheet..."</p>
+                        <div class="h-px bg-slate-700 my-4"></div>
+                        <p class="text-blue-400">Generating Code.gs... Done!</p>
+                        <p class="text-blue-400">Designing UI with Tailwind... Done!</p>
+                        <p class="text-blue-400">Integrating Pakasir API... Done!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Feature List -->
+    <section id="fitur" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black mb-4">Fitur Premium <span class="text-emerald-400">Tanpa Batas</span></h2>
+                <p class="text-slate-400">Semua fitur di bawah ini bisa Anda gunakan untuk membangun aplikasi komersial sendiri.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Fitur 1 -->
+                <div class="glass p-8 rounded-3xl border border-white/5 feature-card transition-all duration-300">
+                    <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-brain text-2xl text-emerald-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">AI Smart Recommendation</h3>
+                    <p class="text-slate-400 text-sm">AI akan menganalisa deskripsi aplikasi Anda dan otomatis merekomendasikan fitur sistem (PWA, Dark Mode, SPA) yang paling relevan.</p>
+                </div>
+
+                <!-- Fitur 2 -->
+                <div class="glass p-8 rounded-3xl border border-white/5 feature-card transition-all duration-300">
+                    <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-pen-nib text-2xl text-blue-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Instant Chat Editor</h3>
+                    <p class="text-slate-400 text-sm">Ingin ganti warna atau tambah fungsi? Cukup instruksikan lewat chat, AI akan langsung merevisi kode tanpa menghapus fitur yang sudah ada.</p>
+                </div>
+
+                <!-- Fitur 3 -->
+                <div class="glass p-8 rounded-3xl border border-white/5 feature-card transition-all duration-300">
+                    <div class="w-14 h-14 bg-purple-500/10 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-wallet text-2xl text-purple-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Automatic Payment</h3>
+                    <p class="text-slate-400 text-sm">Integrasi API Pakasir yang sudah siap (Ready to Use) untuk menerima pembayaran QRIS, Virtual Account, hingga Bank Transfer.</p>
+                </div>
+
+                <!-- Fitur 4 -->
+                <div class="glass p-8 rounded-3xl border border-white/5 feature-card transition-all duration-300">
+                    <div class="w-14 h-14 bg-rose-500/10 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-users-gear text-2xl text-rose-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Power Admin Panel</h3>
+                    <p class="text-slate-400 text-sm">Dapatkan dashboard khusus admin untuk mengelola user, mengatur harga, dan memantau transaksi secara otomatis (Real-time Sync).</p>
+                </div>
+
+                <!-- Fitur 5 -->
+                <div class="glass p-8 rounded-3xl border border-white/5 feature-card transition-all duration-300">
+                    <div class="w-14 h-14 bg-yellow-500/10 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-mobile-screen-button text-2xl text-yellow-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">PWA Ready</h3>
+                    <p class="text-slate-400 text-sm">Ubah website Anda menjadi aplikasi mobile (Android/iOS) yang bisa diinstal di layar utama smartphone tanpa lewat Playstore.</p>
+                </div>
+
+                <!-- Fitur 6 -->
+                <div class="glass p-8 rounded-3xl border border-white/5 feature-card transition-all duration-300">
+                    <div class="w-14 h-14 bg-cyan-500/10 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-laptop-code text-2xl text-cyan-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Multi-Platform Deploy</h3>
+                    <p class="text-slate-400 text-sm">Bukan hanya Google Apps Script, AI kami mampu menyesuaikan kode untuk Blogger, WordPress, atau Hosting mandiri.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Call to Action -->
+    <section class="py-24 px-6 text-center">
+        <div class="max-w-4xl mx-auto glass rounded-[3rem] p-16 border border-emerald-500/30 shadow-[0_0_50px_rgba(16,185,129,0.2)]">
+            <h2 class="text-4xl font-black mb-6">Miliki Sekarang & Mulai Berkreasi</h2>
+            <p class="text-slate-400 mb-10 text-lg">Jangan lewatkan kesempatan memiliki tool AI paling komprehensif untuk ekosistem Google ini dengan harga termurah.</p>
+            <div class="flex flex-col items-center gap-6">
+                <a href="https://gemini.google.com/share/97364c54f09f" target="_blank" class="bg-gradient-primary text-white px-12 py-6 rounded-2xl font-black text-2xl hover:scale-105 transition-transform shadow-2xl shadow-emerald-500/40">
+                    BELI SEKARANG (Rp. 65.000)
+                </a>
+                <p class="text-slate-500 text-sm italic">*Tautan di atas akan membawa Anda ke halaman resmi pembelian via Google Share.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-slate-800 text-center">
+        <div class="max-w-7xl mx-auto flex flex-col items-center gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
+                    <i class="fa-solid fa-bolt text-white text-sm"></i>
+                </div>
+                <span class="font-bold tracking-tight text-white uppercase">GAS BUILDER</span>
+            </div>
+            <p class="text-slate-500 text-sm">Powerful AI Workspace for Professional Developers & Content Creators.</p>
+            <div class="text-emerald-400 text-sm font-bold bg-emerald-500/10 px-6 py-2 rounded-full border border-emerald-500/20">
+                Kreator by. Kusdiyanto
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
