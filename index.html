@@ -112,7 +112,7 @@
                 Perkenalkan <strong class="text-white">GAS Web Builder AI</strong> — Asisten pintar yang merakit website & aplikasi impianmu dalam hitungan detik. Cukup ceritakan idemu, AI yang tulis kodenya!
             </p>
 
-            <!-- Video Demo Tersemat -->
+            <!-- Video Demo Tersemat (Diperbesar & Diperbaiki) -->
             <div id="demo" class="w-full max-w-4xl mx-auto mb-12 relative group">
                 <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-[2rem] blur opacity-40 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
                 <div class="relative bg-slate-900 rounded-[1.5rem] border border-slate-700/50 p-2 shadow-2xl">
@@ -371,106 +371,5 @@
         </div>
     </footer>
 
-    <!-- Modal Peringatan Chrome -->
-    <div id="chrome-warning-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
-        <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-sm" onclick="closeWarningModal()"></div>
-        <div class="bg-slate-900 border border-slate-700 p-6 md:p-8 rounded-3xl shadow-2xl relative z-10 max-w-md w-full text-center transform scale-95 transition-transform duration-300" id="chrome-modal-content">
-            <div class="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-blue-500/20">
-                <i class="fa-brands fa-chrome text-4xl text-blue-400"></i>
-            </div>
-            <h3 class="text-2xl font-black text-white mb-2">Buka di Chrome</h3>
-            <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-                Sistem mendeteksi Anda menggunakan browser bawaan ponsel. Untuk memastikan semua fitur berjalan lancar tanpa *error*, sangat disarankan membuka halaman ini di aplikasi <b>Google Chrome</b>.
-            </p>
-            <div class="flex flex-col gap-3">
-                <button onclick="copyLinkAndClose()" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg shadow-blue-500/30">
-                    <i id="copy-btn-icon" class="fa-solid fa-copy"></i>
-                    <span id="copy-btn-text">Salin Link Website</span>
-                </button>
-                <button onclick="closeWarningModal()" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold py-3.5 rounded-xl transition-all">
-                    Tetap Lanjutkan Saja
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Script Deteksi Browser -->
-    <script>
-        function closeWarningModal() {
-            const modal = document.getElementById('chrome-warning-modal');
-            const content = document.getElementById('chrome-modal-content');
-            modal.classList.remove('opacity-100');
-            content.classList.remove('scale-100');
-            // Tunggu animasi selesai baru disembunyikan
-            setTimeout(() => modal.classList.add('hidden'), 300);
-        }
-
-        function copyLinkAndClose() {
-            try {
-                // Trik aman menyalin teks lintas perangkat (HP & Desktop)
-                const textarea = document.createElement("textarea");
-                textarea.value = window.location.href;
-                textarea.style.position = "fixed"; 
-                textarea.style.left = "-9999px";
-                document.body.appendChild(textarea);
-                textarea.focus();
-                textarea.select();
-                document.execCommand("copy");
-                document.body.removeChild(textarea);
-
-                const btnText = document.getElementById('copy-btn-text');
-                const btnIcon = document.getElementById('copy-btn-icon');
-                
-                // Ubah teks dan ikon sebagai indikator sukses
-                btnText.innerText = 'Link Tersalin!';
-                btnIcon.classList.remove('fa-copy');
-                btnIcon.classList.add('fa-check');
-                
-                // Tutup otomatis setelah 1.5 detik
-                setTimeout(() => {
-                    closeWarningModal();
-                }, 1500);
-            } catch (err) {
-                console.error("Gagal menyalin link:", err);
-            }
-        }
-
-        // Jalankan deteksi saat halaman dimuat
-        document.addEventListener("DOMContentLoaded", function() {
-            const userAgent = navigator.userAgent;
-            const vendor = navigator.vendor;
-            
-            // 1. Deteksi apakah ini Chrome asli
-            const isChrome = /Chrome/.test(userAgent) && /Google Inc/.test(vendor);
-            const isCriOS = /CriOS/.test(userAgent); // Kode Chrome di iOS/iPhone
-            
-            // 2. Kecualikan browser yang menggunakan "engine" Chrome tapi bukan Chrome (seperti Edge, Opera, Samsung Internet)
-            const isEdge = /Edg/.test(userAgent);
-            const isOpera = /OPR/.test(userAgent);
-            const isSamsung = /SamsungBrowser/.test(userAgent);
-            
-            // 3. Deteksi "In-App Browser" (Browser di dalam Instagram, Facebook, TikTok) yang sering bikin fitur web mati
-            const isInApp = /FBAN|FBAV|Instagram|TikTok/.test(userAgent);
-
-            // Rumus: Benar-benar Chrome jika dia (Chrome ATAU CriOS) DAN BUKAN (Edge/Opera/Samsung)
-            const isActuallyChrome = (isChrome || isCriOS) && !isEdge && !isOpera && !isSamsung;
-
-            // Tampilkan popup JIKA bukan Chrome ATAU dibuka dari dalam Sosmed
-            if (!isActuallyChrome || isInApp) {
-                const modal = document.getElementById('chrome-warning-modal');
-                const content = document.getElementById('chrome-modal-content');
-                
-                // Munculkan popup dengan sedikit jeda (1 detik) setelah web terbuka agar terasa natural
-                setTimeout(() => {
-                    modal.classList.remove('hidden');
-                    // Beri jeda 50ms agar transisi CSS berjalan (fade in & zoom in)
-                    setTimeout(() => {
-                        modal.classList.add('opacity-100');
-                        content.classList.add('scale-100');
-                    }, 50);
-                }, 1000);
-            }
-        });
-    </script>
 </body>
 </html>
